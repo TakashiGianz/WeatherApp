@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App - Javascript</title>
+    <link rel="stylesheet" href="font/Rimouski.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="app-title"> <p> Weather </p></div>
+      <div class="notification"></div>
+      <div class="weather-cotainer">
+        <div class="weather-icon"><img src="icons/unknown.png" /></div>
+        <div class="temperature-value">
+          <p>- °<span>C</span></p>
+        </div>
+        <div class="temperature-description"><p>-</p></div>
+        <div class="location"><p>-</p></div>
+      </div>
+      <div id="google_translate_element"></div>
+    </div>
+    <script src="app.js"></script>
+    <script type="text/javascript" 
+ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
+  </script>
+  </body>
+</html>
