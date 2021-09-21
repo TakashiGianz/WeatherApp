@@ -3,6 +3,8 @@ const icon = document.querySelector(".weather-icon");
 const tempValue = document.querySelector(".temperature-value p");
 const tempDescription = document.querySelector(".temperature-description p");
 const tempLocation = document.querySelector(".location p");
+const maxTemp = document.querySelector(".max_temp_value p")
+const minTemp = document.querySelector(".min_temp_value p")
 const openWeatherKey = "dafebd460700a5e7c6020854fc65f8c2";
 const KELVIN = 273;
 
@@ -54,6 +56,8 @@ const displayWeather = () => {
   tempValue.innerHTML = `${weather.temperature.value}° <span> C </span>`;
   tempDescription.innerHTML = weather.description;
   tempLocation.innerHTML = `${weather.city}, ${weather.country}`;
+  maxTemp.innerHTML = `${weather.maxTemp}° <span> C </span>`
+  minTemp.innerHTML = `${weather.minTemp}° <span> C </span>`
 };
 
 const getWeather = (latitude, longitude) => {
@@ -70,6 +74,8 @@ const getWeather = (latitude, longitude) => {
       weather.iconId = data.weather[0].icon;
       weather.city = data.name;
       weather.country = data.sys.country;
+      weather.maxTemp = Math.floor(data.main.temp_max - KELVIN);
+      weather.minTemp = Math.floor(data.main.temp_min - KELVIN);
     })
     .then(() => {
       displayWeather();

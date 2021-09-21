@@ -95,6 +95,22 @@ body {
   font-size: 0.8em;
 }
 
+.maxandmin_container {
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  margin-top: 15px;
+  color: #293251;
+}
+
+.max_temp_value, .min_temp_value {
+  display: flex;
+}
+
+.max_temp_value img, .min_temp_value img{
+  width: 50px;
+}
+
 #google_translate_element {
 margin-top: 30px;
 text-align: center;
